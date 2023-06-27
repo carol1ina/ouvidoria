@@ -1,0 +1,9 @@
+def listagemManifestacao():
+    print('Listagem de manifestações:')
+    consultaListagem = 'select * from manifestacao'
+    manifestacoes = listarBancoDados(conexao, consultaListagem)
+    if len(manifestacoes) > 0:
+        for manifestacao in manifestacoes:
+            print('Código', manifestacao[0], '-', manifestacao[1], '-', manifestacao[3], '-', manifestacao[5])
+    else:
+        print('Nenhuma manifestação encontrada.')
